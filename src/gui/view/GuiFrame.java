@@ -9,7 +9,16 @@ public class GuiFrame extends JFrame
 	
 	public GuiFrame(GuiController baseController)
 	{
+		this.baseController = baseController;
+		setupFrame();
 		
+	}
+	
+	private void setupFrame()
+	{
+		this.setSize(400,400);
+		this.setResizable(false);
+		this.setVisible(true);
 	}
 
 }
