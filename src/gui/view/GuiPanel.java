@@ -12,34 +12,33 @@ public class GuiPanel extends JPanel
 	private JButton firstButton;
 	private JTextField firstTextField;
 	private SpringLayout baseLayout;
-	
+
 	public GuiPanel(GuiController baseController)
 	{
 		this.baseController = baseController;
-		
+
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("Don't push me, cause I'm close to the edge!");
 		firstTextField = new JTextField("Words should be typed here.");
-		
+
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
-	
+
 	private void setupPanel()
 	{
 		this.add(firstButton);
 		this.add(firstTextField);
 	}
-	
+
 	private void setupLayout()
 	{
-		
+
 	}
-	
+
 	private void setupListeners()
 	{
-		
+
 	}
 }
-
