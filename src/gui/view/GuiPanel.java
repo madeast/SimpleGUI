@@ -28,6 +28,7 @@ public class GuiPanel extends JPanel
 
 	private void setupPanel()
 	{
+		this.setLayout(baseLayout);
 		this.add(firstButton);
 		this.add(firstTextField);
 	}
