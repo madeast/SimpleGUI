@@ -11,14 +11,17 @@ public class GuiPanel extends JPanel
 	private JButton firstButton;
 	private JTextField firstTextField;
 	private SpringLayout baseLayout;
+	private JTextArea firstTextArea;
 
 	public GuiPanel(GuiController baseController)
 	{
 		this.baseController = baseController;
 
 		baseLayout = new SpringLayout();
-		firstButton = new JButton("Don't push me, cause I'm close to the edge!");
+		firstButton = new JButton("This button is a conversation starter!");
 		firstTextField = new JTextField("Words should be typed here.");
+		firstTextArea = new JTextArea(10, 20);
+		
 		
 		setupPanel();
 		setupLayout();
@@ -28,16 +31,20 @@ public class GuiPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
+		this.setBackground(Color.GREEN);
 		this.add(firstButton);
 		this.add(firstTextField);
+		this.add(firstTextArea);
 	}
 
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 10, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 53, SpringLayout.SOUTH, firstTextField);
-		baseLayout.putConstraint(SpringLayout.NORTH, firstTextField, 36, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, firstTextField, 0, SpringLayout.WEST, firstButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, firstTextArea, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, firstTextArea, 104, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, firstTextField, -67, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 6, SpringLayout.SOUTH, firstTextField);
+		baseLayout.putConstraint(SpringLayout.EAST, firstTextField, -125, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, firstButton, -61, SpringLayout.EAST, this);
 	}
 	
 	private void changeRandomColor()
